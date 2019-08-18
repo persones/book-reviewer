@@ -8,7 +8,8 @@ paths = ['Ready for Editorial Approval', 'Ready for Author Review']
 def find_term(doc, *args):
   for p in doc.paragraphs:
     for term in args:
-      pos = p.text.lower().find(term)
+      #pos = p.text.lower().find(term)
+      pos = p.text.find(term)
       if pos > -1:
         print(f'[{term}] {p.text[:40]}...{p.text[pos:pos + 40]}')
 
@@ -42,6 +43,6 @@ def run(func, *argv):
           continue 
         func(doc, *argv)
 
-#run(find_term, 'the case for o')
+run(find_term, 'Si7021')
 #run(find_style, 'the case for o')
-run(show_toc, 0)
+#run(show_toc, 0)
